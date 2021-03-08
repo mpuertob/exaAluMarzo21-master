@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Atracciones Ramirez
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Nueva Atraccion</ion-card-title>
+    </ion-card-header>
+    <ion-card-subtitle>
+      pulse aqui para generar una atraccion nueva completamente aleatoria
+    </ion-card-subtitle>
+    <ion-card-content (click)="navegarNuevaAtraccion()">Crear Nueva Atraccion</ion-card-content>
+  </ion-card>
+  <ion-label>Menu Atracciones</ion-label>
+  <ion-item>
+    <ion-button (click)="navegarRepetir()">SELECCIONAR</ion-button>
+    <ion-button (click)="navegarMirarRecorrido()">MIRAR RECORRIDO</ion-button>
+  </ion-item>
+  <ion-label *ngIf="obtenerAtraccionSeleccionada()">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>
+          Atraccion Seleccionada
+        </ion-card-subtitle>
+        <ion-card-title>{{atraccionSeleccionada.nombre}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-label>Cantidad de personas:
+          <ion-input [(ngModel)]="cantidadPersonas" value={{cantidadPersonas}}></ion-input>
+        </ion-label>
+        <ion-item>
+          <ion-button (click)="generarViaje()">TICKET</ion-button>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-label>
+</ion-content>

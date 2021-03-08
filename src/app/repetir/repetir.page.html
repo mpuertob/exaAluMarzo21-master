@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>repetir</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let atraccion of listaAtracciones" (click)="seleccionarAtraccion(atraccion)">
+    <ion-card-header>
+      <ion-card-title>{{atraccion.nombre}}</ion-card-title>
+    </ion-card-header>
+    <ion-item>La atraccion de tipo: {{obtenerTipoAtraccion(atraccion.tipo)}}</ion-item>
+    <ion-item>por un precio de {{atraccion.precio}} euros</ion-item>
+  </ion-card>
+
+</ion-content>

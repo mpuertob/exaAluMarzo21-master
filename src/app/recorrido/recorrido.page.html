@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>recorrido</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let viaje of listaViajes">
+    <ion-card>
+      <ion-card-subtitle>{{obtenerNombreAtraccion(viaje)}}</ion-card-subtitle>
+      <ion-card-title>realizado por {{viaje.personas}} personas</ion-card-title>
+    </ion-card>
+    <br>
+  </div>
+</ion-content>

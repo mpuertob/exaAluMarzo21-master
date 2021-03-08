@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="aumentarListadoAtracciones()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>nuevaAtraccion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="atraccion">
+    <ion-card-header>
+      <ion-card-title>Atraccion Generada</ion-card-title>
+      <ion-card-subtitle>{{atraccion.nombre}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-item>Una atraccion de tipo: {{obtenerTipoAtraccion(atraccion.tipo)}}</ion-item>
+    <ion-item>Al modico precio de {{atraccion.precio}} euros</ion-item>
+  </ion-card>
+</ion-content>
+<ion-footer *ngIf="!atraccion">
+  <ion-item (click)="generarAtraccion()">Genera Atraccion</ion-item>
+</ion-footer>
