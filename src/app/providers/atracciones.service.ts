@@ -17,6 +17,12 @@ export class AtraccionesService {
   obtenerLongitud(): Promise<number> {
     return this.Storage.length();
   }
+  obtenerAtraccionEnConcreto(nombreAtraccion): Promise<Atraccion> {
+    return this.Storage.get(nombreAtraccion);
+  }
+  obtenerKeysAlmacenadas(): Promise<string[]> {
+    return this.Storage.keys();
+  }
   borrarLista(): Promise<void> {
     return this.Storage.clear();
   }

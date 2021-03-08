@@ -34,13 +34,14 @@ export class HomePage {
     this.route.navigate(['nueva-atraccion']);
   }
   navegarRepetir() {
-    this.conjuntoAtracciones = this.listadoAtracciones.listadoAtracciones;
-    let extrasNavegacion: NavigationExtras = {
-      state: {
-        lista: this.conjuntoAtracciones,
-      },
-    };
-    this.route.navigate(['repetir'], extrasNavegacion);
+    // this.conjuntoAtracciones = this.listadoAtracciones.listadoAtracciones;
+    // let extrasNavegacion: NavigationExtras = {
+    //   state: {
+    //     lista: this.conjuntoAtracciones,
+    //   },
+    // };
+    // this.route.navigate(['repetir'], extrasNavegacion);
+    this.route.navigate(['repetir']);
   }
   obtenerAtraccionSeleccionada() {
     this.atraccionSeleccionada = this.listadoAtracciones.atraccionSeleccionada;
