@@ -13,7 +13,6 @@ export class PaseadorService {
       this.stepcounter
         .getTodayStepCount()
         .then((numeroAleatorio) => {
-          console.log(numeroAleatorio);
           resolve(numeroAleatorio);
         })
         .catch(() => {
