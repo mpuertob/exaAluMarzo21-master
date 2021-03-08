@@ -29,13 +29,12 @@ export class StepcounterMock extends Stepcounter {
     return new Promise((resolve, reject) => {
       let minimo: number = 100;
       let maximo: number = 600;
-      let numeroAleatorio: number = Number.parseInt(
-        (Math.random() * (maximo - minimo) + minimo).toFixed(0)
-      );
-      resolve(numeroAleatorio);
+      resolve(this.obtenerNumeroAleatorio(minimo, maximo));
     });
   }
-
+  private obtenerNumeroAleatorio(min: number, max: number): number {
+    return Number.parseInt((Math.random() * (max - min) + min).toFixed(0));
+  }
   /**
    * Get the amount of steps since the start command has been called
    * @returns {Promise<any | number>} Returns a Promise that resolves on success with the amount of steps since the start command has been called, or rejects on failure

@@ -17,8 +17,8 @@ describe('PaseadorService', () => {
   it('probando rangos', () => {
     let limiteMinimo = false;
     let limiteMaximo = false;
-    let minimo = 100;
-    let maximo = 600;
+    let minimo = 0;
+    let maximo = 5;
     for (let i = 0; i < 900; i++) {
       let numeroAleatorio = service.obtenerNumeroAleatorio(minimo, maximo);
       if (numeroAleatorio === minimo) {
