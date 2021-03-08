@@ -6,6 +6,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { IonicStorageModule } from '@ionic/storage';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { StepcounterMock } from 'mocks/stepcounter';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    Stepcounter,
+    { provide: Stepcounter, useClass: StepcounterMock },
   ],
   bootstrap: [AppComponent],
 })

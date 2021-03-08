@@ -49,11 +49,26 @@ export class HomePage {
   }
   generarViaje() {
     alert('Vamos a generar el viaje');
-    let viaje: Viaje = new Viaje(
-      this.atraccionSeleccionada,
-      this.cantidadPersonas,
-      0
-    );
-    this.recorrido.insertarViaje(viaje);
+    let viaje: Viaje;
+    let numeroPasos: number = 0;
+    this.paseador
+      .getSteps()
+      .then((pasos) => {
+        numeroPasos = pasos;
+        viaje = new Viaje(
+          this.atraccionSeleccionada,
+          this.cantidadPersonas,
+          numeroPasos
+        );
+        this.recorrido.insertarViaje(viaje);
+      })
+      .catch(() => {
+        viaje = new Viaje(
+          this.atraccionSeleccionada,
+          this.cantidadPersonas,
+          numeroPasos
+        );
+        this.recorrido.insertarViaje(viaje);
+      });
   }
 }

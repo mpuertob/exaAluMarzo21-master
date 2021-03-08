@@ -2,12 +2,22 @@ import { Stepcounter } from '@ionic-native/stepcounter/ngx';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PaseadorService {
-
-  constructor(private stepcounter:Stepcounter) { 
+  constructor(private stepcounter: Stepcounter) {
     console.log(this.stepcounter);
-    
+  }
+  getSteps(): Promise<number> {
+    return new Promise<number>((resolve, reject) => {
+      this.stepcounter
+        .getTodayStepCount()
+        .then((numeroAleatorio) => {
+          resolve(numeroAleatorio);
+        })
+        .catch(() => {
+          reject(0);
+        });
+    });
   }
 }
