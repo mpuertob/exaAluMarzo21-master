@@ -24,6 +24,13 @@ export class HomePage {
   ) {}
 
   navegarNuevaAtraccion() {
+    this.atracciones.obtenerLongitud().then((longitud) => {
+      alert(
+        'En el nativo de Storage hay ' +
+          longitud +
+          ' numero de atracciones guardadas'
+      );
+    });
     this.route.navigate(['nueva-atraccion']);
   }
   navegarRepetir() {
@@ -70,5 +77,10 @@ export class HomePage {
         );
         this.recorrido.insertarViaje(viaje);
       });
+  }
+  borrarLista() {
+    this.atracciones.borrarLista().then(() => {
+      alert('Lista Borrada Correctamente');
+    });
   }
 }
