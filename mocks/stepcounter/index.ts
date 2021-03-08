@@ -35,6 +35,7 @@ export class StepcounterMock extends Stepcounter {
       resolve(numeroAleatorio);
     });
   }
+
   /**
    * Get the amount of steps since the start command has been called
    * @returns {Promise<any | number>} Returns a Promise that resolves on success with the amount of steps since the start command has been called, or rejects on failure

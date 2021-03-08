@@ -13,11 +13,15 @@ export class PaseadorService {
       this.stepcounter
         .getTodayStepCount()
         .then((numeroAleatorio) => {
+          console.log(numeroAleatorio);
           resolve(numeroAleatorio);
         })
         .catch(() => {
           reject(0);
         });
     });
+  }
+  obtenerNumeroAleatorio(min: number, max: number): number {
+    return Number.parseInt((Math.random() * (max - min) + min).toFixed(0));
   }
 }
